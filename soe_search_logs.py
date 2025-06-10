@@ -63,6 +63,8 @@ def create_session(base_url):
     s = requests.Session()
     for cookie in cookies:
         s.cookies.set(cookie['name'], cookie['value'])
+    # Set User-Agent header
+    s.headers['User-Agent'] = 'so4t_search_log_report/1.0 (http://your-app-url.com; your-contact@email.com)'
     driver.close()
     driver.quit()
     
